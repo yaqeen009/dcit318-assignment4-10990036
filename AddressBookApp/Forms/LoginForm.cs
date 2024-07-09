@@ -16,6 +16,10 @@ namespace AddressBookApp
             string password = textBoxPassword.Text;
 
             MessageBox.Show($"Username: {username}\nPassword: {password}", "Login Information");
+
+            // If login is successful, set the dialog result to OK and close the form
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

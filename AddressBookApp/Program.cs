@@ -10,7 +10,16 @@ namespace AddressBookApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+
+            // Run the login form first
+            var loginForm = new LoginForm();
+            Application.Run(loginForm);
+
+            // If login is successful, show the address book form
+            if (loginForm.DialogResult == DialogResult.OK)
+            {
+                Application.Run(new AddressBookForm());
+            }
         }
     }
 }
