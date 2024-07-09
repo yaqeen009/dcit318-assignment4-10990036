@@ -18,7 +18,14 @@ namespace AddressBookApp
             // If login is successful, show the address book form
             if (loginForm.DialogResult == DialogResult.OK)
             {
-                Application.Run(new AddressBookForm());
+                var addressBookForm = new AddressBookForm();
+                Application.Run(addressBookForm);
+
+                // After closing the address book, open the drawing form
+                if (addressBookForm.DialogResult == DialogResult.OK)
+                {
+                    Application.Run(new DrawingForm());
+                }
             }
         }
     }

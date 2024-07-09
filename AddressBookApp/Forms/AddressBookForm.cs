@@ -17,6 +17,10 @@ namespace AddressBookApp
             string phoneNumber = textBoxPhoneNumber.Text;
 
             MessageBox.Show($"Name: {name}\nEmail: {email}\nPhone Number: {phoneNumber}", "Saved Information");
+
+            // Close the form and set the dialog result to OK to indicate transition
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }
